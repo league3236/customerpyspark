@@ -73,7 +73,7 @@ $git clone https://github.com/league3236/customerpyspark.git
 - 도커 컨테이너 실행하기
 
 ```bash
-$docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v "$PWD":/home/jovyan/work jupyter/pyspark-notebook
+$docker start --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v {youreworkspace}/customerpyspark:/home/jovyan/work jupyter/pyspark-notebook
 ```
 
 - 컨테이너 로그확인을 통해서 jupyter notebook 접근 키 확인
