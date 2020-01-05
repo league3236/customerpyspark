@@ -82,4 +82,15 @@ $docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v {yourewo
 $docker logs myspark
 ```
 
+- 다음과 같은 값이 뜨면 token값을 확인할 수 있음
+
+```bash
+To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+    Or copy and paste one of these URLs:
+        http://b7ef885b8e94:8888/?token=4567def84446b2bc647562a271e902755b8b6d7c294fd6b5
+     or http://127.0.0.1:8888/?token=4567def84446b2bc647562a271e902755b8b6d7c294fd6b5
+```
+
+- {ip}:8888 접근 및 token값 입력 후 /work/myspark.py 실행
 
