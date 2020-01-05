@@ -66,14 +66,15 @@ RUN conda install --quiet -y 'pyarrow' && \
 - 현재 레포지토리 clone 해주세요
 
 ```bash
-$cd {youreworkspace}
+$cd {yourworkspace}
+$chmod 777 -R {yourworkspace}/customerpyspark
 $git clone https://github.com/league3236/customerpyspark.git
 ```
 
 - 도커 컨테이너 실행하기
 
 ```bash
-$docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v {youreworkspace}/customerpyspark:/home/jovyan/work jupyter/pyspark-notebook
+$docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v {yourworkspace}/customerpyspark:/home/jovyan/work jupyter/pyspark-notebook
 ```
 
 - 컨테이너 로그확인을 통해서 jupyter notebook 접근 키 확인
