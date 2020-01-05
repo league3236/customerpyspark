@@ -66,14 +66,15 @@ RUN conda install --quiet -y 'pyarrow' && \
 - 현재 레포지토리 clone 해주세요
 
 ```bash
-$cd {youreworkspace}
+$cd {yourworkspace}
+$chmod 777 -R {yourworkspace}/customerpyspark
 $git clone https://github.com/league3236/customerpyspark.git
 ```
 
 - 도커 컨테이너 실행하기
 
 ```bash
-$docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v "$PWD":/home/jovyan/work jupyter/pyspark-notebook
+$docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v {yourworkspace}/customerpyspark:/home/jovyan/work jupyter/pyspark-notebook
 ```
 
 - 컨테이너 로그확인을 통해서 jupyter notebook 접근 키 확인
@@ -82,4 +83,15 @@ $docker run --name myspark -d -p 8888:8888 -p 4040:4040 -p 4041:4041 -v "$PWD":/
 $docker logs myspark
 ```
 
+- 다음과 같은 값이 뜨면 token값을 확인할 수 있음
+
+```bash
+To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+    Or copy and paste one of these URLs:
+        http://b7ef885b8e94:8888/?token=4567def84446b2bc647562a271e902755b8b6d7c294fd6b5
+     or http://127.0.0.1:8888/?token=4567def84446b2bc647562a271e902755b8b6d7c294fd6b5
+```
+
+- {ip}:8888 접근 및 token값 입력 후 /work/myspark.py 실행
 
